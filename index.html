@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: #ffffff;
+            color: #222;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .categories {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .categories button {
+            border: none;
+            background: #f3f3f3;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .categories button:hover {
+            background: #222;
+            color: white;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            background: #f3f3f3;
+        }
+
+        .product h3 {
+            font-size: 16px;
+        }
+
+        .price {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background: #222;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">MY SHOP</div>
+        <div>Contact</div>
+    </header>
+
+    <h2>Shop by Category</h2>
+
+    <div class="categories">
+        <button onclick="filterProducts('all')">All</button>
+        <button onclick="filterProducts('tops')">Tops</button>
+        <button onclick="filterProducts('bottoms')">Bottoms</button>
+        <button onclick="filterProducts('accessories')">Accessories</button>
+    </div>
+
+    <div class="products">
+
+        <div class="product" data-category="bottoms">
+            <img src="https://placehold.co/600x800" alt="Vintage Jeans">
+            <h3>Vintage Jeans</h3>
+            <p class="price">RM 109</p>
+            <a class="buy-button" href="https://wa.me/60123456789" target="_blank">
+                How to Buy
+            </a>
+        </div>
+
+        <div class="product" data-category="tops">
+            <img src="https://placehold.co/600x800" alt="Basic Top">
+            <h3>Basic Top</h3>
+            <p class="price">RM 59</p>
+            <a class="buy-button" href="https://wa.me/60123456789" target="_blank">
+                How to Buy
+            </a>
+        </div>
+
+        <div class="product" data-category="bottoms">
+            <img src="https://placehold.co/600x800" alt="Wide Leg Pants">
+            <h3>Wide Leg Pants</h3>
+            <p class="price">RM 99</p>
+            <a class="buy-button" href="https://wa.me/60123456789" target="_blank">
+                How to Buy
+            </a>
+        </div>
+
+        <div class="product" data-category="accessories">
+            <img src="https://placehold.co/600x800" alt="Accessories">
+            <h3>Accessories</h3>
+            <p class="price">RM 39</p>
+            <a class="buy-button" href="https://wa.me/60123456789" target="_blank">
+                How to Buy
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
