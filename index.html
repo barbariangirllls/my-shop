@@ -183,6 +183,26 @@ header {
     font-size: 11px;
     letter-spacing: 1.5px;
 }
+/* Shop Content Layout */
+
+.shop-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.shop-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+    .shop-content {
+        padding: 0 15px;
+    }
+}
     </style>
 </head>
 
@@ -194,7 +214,7 @@ header {
         CONTACT
     </button>
 </header>
-
+    <main class="shop-content">
     <h2>Shop by Category</h2>
 
     <div class="categories">
@@ -251,6 +271,7 @@ header {
         </div>
 
     </div>
+</main>
 <!-- Contact Popup -->
 <div id="contactModal" class="modal">
 
